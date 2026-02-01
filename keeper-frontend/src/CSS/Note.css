@@ -1,0 +1,239 @@
+/* Note.css - Enhanced Delete Progress */
+
+/* Delete button container */
+.hold-to-delete {
+  position: relative;
+  overflow: visible; /* ✅ Allow progress to be visible */
+}
+
+/* Delete button when holding */
+.delete-btn.deleting {
+  background: rgba(255, 68, 68, 0.15) !important;
+  border-color: #ff4444 !important;
+  color: #ff4444 !important;
+  animation: pulseGlow 0.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.7);
+  }
+}
+
+/* Progress bar - More visible */
+.delete-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px; /* ✅ Increased from 3px to 5px */
+  background: linear-gradient(90deg, #ff6666, #ff4444, #ff0000);
+  transition: width 0.02s linear, background 0.2s;
+  border-radius: 0 0 50% 50%; /* ✅ Rounded bottom */
+  z-index: 5;
+  box-shadow: 0 2px 8px rgba(255, 68, 68, 0.5); /* ✅ Add glow */
+}
+
+/* Percentage text - Centered on button */
+.delete-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: 800;
+  color: #ff0000;
+  text-shadow: 
+    0 0 4px rgba(255, 255, 255, 0.9),
+    0 1px 2px rgba(0, 0, 0, 0.3); /* ✅ White glow for visibility */
+  pointer-events: none;
+  z-index: 10;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+/* Note wrapper */
+.note-wrapper {
+  display: inline-block;
+  width: 100%;
+}
+
+/* Note card */
+.note {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 15px rgba(217, 128, 232, 0.15),
+    0 0 0 1px rgba(217, 128, 232, 0.1);
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+}
+
+.note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #D980E8, #FF8CE4, #D599FF);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.note:hover::before {
+  opacity: 1;
+}
+
+.note:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 8px 30px rgba(217, 128, 232, 0.25),
+    0 0 0 1px rgba(217, 128, 232, 0.2);
+}
+
+.note h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #2d1b4e;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.note p {
+  font-size: 15px;
+  margin-bottom: 15px;
+  color: #6b5b95;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.6;
+}
+
+.note-date {
+  display: block;
+  font-size: 12px;
+  color: #A080E8;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.note-actions button {
+  background: transparent;
+  border: 2px solid #e9e3f5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: #A080E8;
+  position: relative; /* ✅ For progress bar positioning */
+}
+
+.edit-btn:hover {
+  background: #D980E8;
+  border-color: #D980E8;
+  color: white;
+  transform: scale(1.1) rotate(10deg);
+}
+
+.delete-btn:hover {
+  background: #e42020;
+  border-color: #ff4444;
+  color: white;
+  transform: scale(1.1) rotate(-10deg);
+}
+
+.save-btn:hover {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+  transform: scale(1.1);
+}
+
+.cancel-btn:hover {
+  background: #ff8c00;
+  border-color: #ff8c00;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Edit Mode */
+.edit-title,
+.edit-content {
+  width: 100%;
+  border: 2px solid #e9e3f5;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  margin-bottom: 12px;
+  transition: all 0.3s;
+  background: rgba(250, 249, 252, 0.95);
+  color: #2d1b4e;
+}
+
+.edit-title:focus,
+.edit-content:focus {
+  outline: none;
+  border-color: #D980E8;
+  box-shadow: 0 0 0 4px rgba(217, 128, 232, 0.12);
+  background: white;
+}
+
+.edit-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.edit-content {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .note {
+    padding: 15px;
+  }
+
+  .note h1 {
+    font-size: 18px;
+  }
+
+  .note p {
+    font-size: 14px;
+  }
+
+  .note-actions button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .delete-progress {
+    height: 4px;
+  }
+
+  .delete-percentage {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,126 @@
+/* NotesPage.css - Purple-Pink Theme */
+.notes-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(-45deg, 
+    #fef3ff, 
+    #f9f0ff, 
+    #f5ebff, 
+    #fef5ff, 
+    #f0e6ff, 
+    #f8f2ff);
+  background-size: 400% 400%;
+  animation: pageGradient 20s ease infinite;
+}
+
+@keyframes pageGradient {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Notes Grid */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 30px 40px;
+  flex: 1;
+}
+
+/* Loading, Error, Empty States */
+.loading-container,
+.error-container,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  flex: 1;
+}
+
+.loading-container p {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #A080E8;
+  font-weight: 600;
+}
+
+.error-container p {
+  color: #ff4444;
+  font-size: 16px;
+  font-weight: 600;
+  background: rgba(255, 68, 68, 0.1);
+  padding: 15px 30px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 68, 68, 0.3);
+}
+
+.empty-state {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 60px 40px;
+  margin: 40px;
+  box-shadow: 0 8px 32px rgba(217, 128, 232, 0.15);
+}
+
+.empty-state h2 {
+  background: linear-gradient(135deg, #D980E8, #FF8CE4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 32px;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.empty-state p {
+  color: #A080E8;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Note Wrapper for Animation */
+.note-wrapper {
+  display: inline-block;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .notes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .empty-state {
+    margin: 20px;
+    padding: 40px 20px;
+  }
+
+  .empty-state h2 {
+    font-size: 24px;
+  }
+
+  .empty-state p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notes-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .empty-state h2 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,60 @@
+.footer {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, 
+    #D980E8 0%, 
+    #FF8CE4 25%,
+    #D599FF 50%, 
+    #A080E8 75%,
+    #918CFF 100%);
+  background-size: 200% 200%;
+  animation: footerGradient 15s ease infinite;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  box-shadow: 0 -4px 20px rgba(217, 128, 232, 0.25);
+}
+
+@keyframes footerGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.3px;
+}
+
+.footer .heart {
+  color: #ff6b6b;
+  animation: heartbeat 1.5s ease-in-out infinite;
+  display: inline-block;
+  font-size: 16px;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px;
+  }
+
+  .footer p {
+    font-size: 12px;
+  }
+}

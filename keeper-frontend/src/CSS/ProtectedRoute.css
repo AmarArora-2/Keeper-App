@@ -1,0 +1,15 @@
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #eee;
+  gap: 20px;
+}
+
+.loading-screen p {
+  color: #666;
+  font-size: 1.2em;
+  font-weight: 500;
+}
