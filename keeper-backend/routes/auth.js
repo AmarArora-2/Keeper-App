@@ -101,12 +101,12 @@ router.get('/google', passport.authenticate('google', { scope: ['profile', 'emai
 
 router.get('/google/callback', passport.authenticate('google', { 
     session: false, 
-    failureRedirect:`${process.env.CLIENT_URL}/login` 
+    failureRedirect:`${process.env.CLIENT_URL}/auth` 
     }), (req, res) => {
     const token = generateToken(req.user);
 
     // Redirect to frontend with token
-    res.redirect(`${process.env.CLIENT_URL}/auth/success?token=${token}`);
+    res.redirect(`${process.env.CLIENT_URL}?token=${token}`);
   }
 );
 
