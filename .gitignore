@@ -84,7 +84,7 @@ pids
 # Package management
 
 .npm
-package-lock.json
+
 yarn.lock
 .yarn-integrity
 .yarn/cache
