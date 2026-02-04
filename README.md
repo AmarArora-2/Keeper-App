@@ -137,7 +137,6 @@
 **Create .env file in backend root**
 
     Server
-
     NODE_ENV=development
     PORT=5000
 
@@ -217,52 +216,52 @@
 
 **keeper-frontend/**
 
-├── public/
-├── src/
-│   ├── components/
-│   │   ├── AuthPage.jsx
-│   │   ├── NotesPage.jsx
-│   │   ├── Header.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Note.jsx
-│   │   ├── CreateArea.jsx
-│   │   └── ProtectedRoute.jsx
-│   ├── services/
-│   │   └── api.js
-│   ├── CSS/
-│   │   ├── Auth.css
-│   │   ├── Header.css
-│   │   ├── Footer.css
-│   │   ├── Note.css
-│   │   ├── NotesPage.css
-│   │   └── CreateArea.css
-│   ├── AuthContext.jsx
-│   ├── AuthProvider.jsx
-│   ├── App.jsx
-│   ├── App.css
-│   └── main.jsx
-├── .env
-├── .gitignore
-├── package.json
-├── vite.config.js
-└── vercel.json
+    ├── public/
+    ├── src/
+    │   ├── components/
+    │   │   ├── AuthPage.jsx
+    │   │   ├── NotesPage.jsx
+    │   │   ├── Header.jsx
+    │   │   ├── Footer.jsx
+    │   │   ├── Note.jsx
+    │   │   ├── CreateArea.jsx
+    │   │   └── ProtectedRoute.jsx
+    │   ├── services/
+    │   │   └── api.js
+    │   ├── CSS/
+    │   │   ├── Auth.css
+    │   │   ├── Header.css
+    │   │   ├── Footer.css
+    │   │   ├── Note.css
+    │   │   ├── NotesPage.css
+    │   │   └── CreateArea.css
+    │   ├── AuthContext.jsx
+    │   ├── AuthProvider.jsx
+    │   ├── App.jsx
+    │   ├── App.css
+    │   └── main.jsx
+    ├── .env
+    ├── .gitignore
+    ├── package.json
+    ├── vite.config.js
+    └── vercel.json
 
 ### Backend:
 
 **keeper-backend/**
 
-├── config/
-│   ├── PostgreSQLDB.js
-│   └── passport.js
-├── routes/
-│   ├── auth.js
-│   └── notes.js
-├── middleware/
-│   └── auth.js
-├── .env
-├── .gitignore
-├── package.json
-└── server.js
+    ├── config/
+    │   ├── PostgreSQLDB.js
+    │   └── passport.js
+    ├── routes/
+    │   ├── auth.js
+    │   └── notes.js
+    ├── middleware/
+    │   └── auth.js
+    ├── .env
+    ├── .gitignore
+    ├── package.json
+    └── server.js
 
 ## 🔌 API Endpoints:
 
