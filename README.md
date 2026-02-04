@@ -2,6 +2,7 @@
 
 > A beautiful, full-stack note-taking application built with the PERN stack featuring secure authentication, elegant UI, and seamless user experience.
 
+
 [![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge&logo=vercel)](https://keeper-app-note.vercel.app)
 [![GitHub](https://img.shields.io/badge/github-repo-blue?style=for-the-badge&logo=github)](https://github.com/AmarArora-2/Keeper-App)
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
@@ -33,12 +34,12 @@
 
 ## 🚀 Live Demo
 
-**Frontend:** [https://keeper-app-note.vercel.app](https://keeper-app-note.vercel.app)  
-**Backend API:** [https://keeper-app-4ce4.onrender.com](https://keeper-app-4ce4.onrender.com)
+- **Frontend:** [https://keeper-app-note.vercel.app](https://keeper-app-note.vercel.app)  
+- **Backend API:** [https://keeper-app-4ce4.onrender.com](https://keeper-app-4ce4.onrender.com)
 
-### Test Credentials
-Email: demo@example.com
-Password: Demo123!
+**Test Credentials**
+- **Email:** demo@example.com
+- **Password:** Demo123!
 
 *Or sign in with Google for instant access*
 
@@ -51,7 +52,7 @@ Password: Demo123!
 
 <div align="center">
   <img src="./keeper-frontend/Screenshot/create-note.png" alt="Create Note" width="45%">
-  <img src="./keeper-frontend/Screenshot/mobile-view.png" alt="Mobile View" width="45%">
+  <img src="./keeper-frontend/Screenshot/mobile-view.png" alt="Mobile View" width="45%" height="500">
 </div>
 
 ## 🛠️ Tech Stack
@@ -86,7 +87,7 @@ Password: Demo123!
 
 ### Clone the Repository
 
-**Clone frontend****
+**Clone frontend**
 - git clone link
 - cd keeper-frontend
 
@@ -103,10 +104,12 @@ Password: Demo123!
     Create PostgreSQL database
 
 **sql**
+
     CREATE DATABASE keeper_app;
     Create database tables
 
 **sql**
+
     -- Users table
     CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -134,6 +137,7 @@ Password: Demo123!
 **Create .env file in backend root**
 
     Server
+
     NODE_ENV=development
     PORT=5000
 
@@ -168,7 +172,8 @@ Password: Demo123!
    - Add authorized redirect URI: http://localhost:5000/api/auth/google/callback
    - Copy Client ID and Client Secret to .env
 
-**Start backend server:**
+**Start backend server**
+
     npm start
     # or for development
     npm run dev
@@ -178,10 +183,12 @@ Password: Demo123!
 ### Frontend Setup:
 
 **Install dependencies** 
+
     cd frontend
     npm install
 
-**Create .env file in frontend root:**
+**Create .env file in frontend root**
+
     VITE_API_URL=http://localhost:5000
 
     Start development server: 
@@ -206,55 +213,61 @@ Password: Demo123!
    - Progress bar shows deletion status
 
 ## 🏗️ Project Structure
-**Frontend:**
-    keeper-frontend/
-    ├── public/
-    ├── src/
-    │   ├── components/
-    │   │   ├── AuthPage.jsx
-    │   │   ├── NotesPage.jsx
-    │   │   ├── Header.jsx
-    │   │   ├── Footer.jsx
-    │   │   ├── Note.jsx
-    │   │   ├── CreateArea.jsx
-    │   │   └── ProtectedRoute.jsx
-    │   ├── services/
-    │   │   └── api.js
-    │   ├── CSS/
-    │   │   ├── Auth.css
-    │   │   ├── Header.css
-    │   │   ├── Footer.css
-    │   │   ├── Note.css
-    │   │   ├── NotesPage.css
-    │   │   └── CreateArea.css
-    │   ├── AuthContext.jsx
-    │   ├── AuthProvider.jsx
-    │   ├── App.jsx
-    │   ├── App.css
-    │   └── main.jsx
-    ├── .env
-    ├── .gitignore
-    ├── package.json
-    ├── vite.config.js
-    └── vercel.json
+### Frontend
 
-**Backend:**
-    keeper-backend/
-    ├── config/
-    │   ├── PostgreSQLDB.js
-    │   └── passport.js
-    ├── routes/
-    │   ├── auth.js
-    │   └── notes.js
-    ├── middleware/
-    │   └── auth.js
-    ├── .env
-    ├── .gitignore
-    ├── package.json
-    └── server.js
+**keeper-frontend/**
+
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── AuthPage.jsx
+│   │   ├── NotesPage.jsx
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Note.jsx
+│   │   ├── CreateArea.jsx
+│   │   └── ProtectedRoute.jsx
+│   ├── services/
+│   │   └── api.js
+│   ├── CSS/
+│   │   ├── Auth.css
+│   │   ├── Header.css
+│   │   ├── Footer.css
+│   │   ├── Note.css
+│   │   ├── NotesPage.css
+│   │   └── CreateArea.css
+│   ├── AuthContext.jsx
+│   ├── AuthProvider.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+├── .env
+├── .gitignore
+├── package.json
+├── vite.config.js
+└── vercel.json
+
+### Backend:
+
+**keeper-backend/**
+
+├── config/
+│   ├── PostgreSQLDB.js
+│   └── passport.js
+├── routes/
+│   ├── auth.js
+│   └── notes.js
+├── middleware/
+│   └── auth.js
+├── .env
+├── .gitignore
+├── package.json
+└── server.js
 
 ## 🔌 API Endpoints:
+
 **Authentication:**
+
     POST   /api/auth/register          - Register new user
     POST   /api/auth/login             - Login user
     GET    /api/auth/google            - Initiate Google OAuth
@@ -262,6 +275,7 @@ Password: Demo123!
     GET    /api/auth/verify            - Verify JWT token
 
 **Notes:**
+
     GET    /api/notes                  - Get all notes (authenticated)
     POST   /api/notes                  - Create new note
     PUT    /api/notes/:id              - Update note
@@ -269,61 +283,64 @@ Password: Demo123!
 
 ## 🚀 Deployment:
 
-**Frontend (Vercel)**
+### Frontend (Vercel)
 
-- Push code to GitHub:
+**Push code to GitHub**
+
     git add .
     git commit -m "Initial commit"
     git push origin main
 
-- Deploy on Vercel:
+**Deploy on Vercel**
 
     Go to vercel.com
     Import your GitHub repository
     Add environment variable: VITE_API_URL=https://your-backend.onrender.com
     Deploy!
 
-- Create vercel.json:
+**Create vercel.json**
+
     {
         "rewrites": [
             { "source": "/(.*)", "destination": "/index.html" }
         ]
     }
 
-**Backend (Render):**
+### Backend (Render):
 
-- Push code to GitHub: 
+**Push code to GitHub:**
+
     git add .
     git commit -m "Initial commit"
     git push origin main
 
-- Create PostgreSQL Database on Render:
+**Create PostgreSQL Database on Render:**
 
     Go to render.com
     New → PostgreSQL
     Copy Internal Database URL
 
-- Deploy Backend:
+**Deploy Backend**
 
-    New → Web Service
-    Connect GitHub repository
-    Add environment variables:
+    - New → Web Service
+    - Connect GitHub repository
+    - Add environment variables:
     
-    DATABASE_URL=<your-internal-db-url>
-    JWT_SECRET=<your-secret>
-    NODE_ENV=production
-    CLIENT_URL=https://your-app.vercel.app
-    GOOGLE_CLIENT_ID=<your-id>
-    GOOGLE_CLIENT_SECRET=<your-secret>
+    - DATABASE_URL=<your-internal-db-url>
+    - JWT_SECRET=<your-secret>
+    - NODE_ENV=production
+    - CLIENT_URL=https://your-app.vercel.app
+    - GOOGLE_CLIENT_ID=<your-id>
+    - GOOGLE_CLIENT_SECRET=<your-secret>
 
-- Deploy!
+**Deploy!**
 
 ## Customization:
 
-**Change Theme Colors**
-- Edit the CSS variables in your component files:
+Change Theme Colors
+Edit the CSS variables in your component files:
 
-    :root {
+    - :root {
     --purple-primary: #D980E8;
     --pink-primary: #FF8CE4;
     --lavender-light: #D599FF;
@@ -333,9 +350,8 @@ Password: Demo123!
 
 ## Modify Authentication Flow
 
-**Edit AuthProvider.jsx to customize login/logout behavior.**
-
-**Add New Features:**
+Edit AuthProvider.jsx to customize login/logout behavior.
+Add New Features:
 
     - Tags/Categories for notes
     - Search functionality
